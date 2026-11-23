@@ -103,8 +103,8 @@ while True:
             input("Press Key To Close...")
         case "2":
             with shelve.open(db_path) as db:
-                name = q.text("Username: ", default="ligma").ask()
-                password = q.password("Password: ", default="balls").ask()
+                name = q.text("Username: ", default="john").ask()
+                password = q.password("Password: ").ask()
                 if name not in db and len(name) > 2:
                     db[name] = {
                         "pass": password,
