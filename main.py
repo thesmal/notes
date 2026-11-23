@@ -81,7 +81,7 @@ def account():
 
 while True:
     opt = q.select(
-        "--- TASKS ---",
+        "--- NOTES ---",
         [
             q.Choice("1. List Users", "1"),
             q.Choice("2. Create Users", "2"),
