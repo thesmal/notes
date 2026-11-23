@@ -5,7 +5,7 @@ from pathlib import Path
 
 import questionary as q
 
-data_path = Path.home() / ".local" / "share" / "tasks"
+data_path = Path.home() / ".local" / "share" / "notes"
 data_path.mkdir(parents=True, exist_ok=True)
 db_path = data_path / "users"
 
