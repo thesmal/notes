@@ -4,8 +4,9 @@ import shelve
 from pathlib import Path
 
 import questionary as q
+from platformdirs import user_data_path
 
-data_path = Path.home() / ".local" / "share" / "notes"
+data_path = user_data_path("NotesCLI", "Thesmal")
 data_path.mkdir(parents=True, exist_ok=True)
 db_path = data_path / "users"
 
@@ -103,7 +104,7 @@ while True:
             input("Press Key To Close...")
         case "2":
             with shelve.open(db_path) as db:
-                name = q.text("Username: ", default="john").ask()
+                name = q.text("Username: ").ask()
                 password = q.password("Password: ").ask()
                 if name not in db and len(name) > 2:
                     db[name] = {
